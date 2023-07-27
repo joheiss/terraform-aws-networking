@@ -16,13 +16,13 @@ locals {
           from        = 8000
           to          = 8000
           protocol    = "tcp"
-          cidr_blocks = ["0.0.0.0/0"]
+          cidr_blocks = var.office_ips
         }
         http = {
           from        = 80
           to          = 80
           protocol    = "tcp"
-          cidr_blocks = ["0.0.0.0/0"]
+          cidr_blocks = var.office_ips
         }
       }
     }
@@ -34,7 +34,7 @@ locals {
           from        = 3306
           to          = 3306
           protocol    = "tcp"
-          cidr_blocks = ["10.123.0.0/16"]
+          cidr_blocks = var.vpc_cidr
         }
       }
     }
